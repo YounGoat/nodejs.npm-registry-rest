@@ -1,0 +1,28 @@
+{
+    "bin": {},
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "^3.3.0"
+    },
+    "directories": {},
+    "scripts": {
+        "test": "mocha"
+    },
+    "name": "npm-registry-rest",
+    "version": "0.0.1",
+    "main": "index.js",
+    "keywords": [
+        "npm-registry"
+    ],
+    "homepage": "https://github.com/YounGoat/nodejs.npm-registry-rest",
+    "description": "NPM registry API",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YounGoat/nodejs.npm-registry-rest.git"
+    },
+    "author": {
+        "name": "YounGoat",
+        "email": "youngoat@163.com",
+        "url": "https://youngoat.github.io"
+    }
+}

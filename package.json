@@ -1,6 +1,11 @@
 {
     "bin": {},
-    "dependencies": {},
+    "dependencies": {
+        "dafo": "^0.0.3",
+        "htp": "^0.6.2",
+        "jinang": "^0.14.0",
+        "noda": "^0.3.0"
+    },
     "devDependencies": {
         "mocha": "^3.3.0"
     },

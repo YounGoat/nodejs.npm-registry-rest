@@ -2,8 +2,8 @@
     "bin": {},
     "dependencies": {
         "dafo": "^0.0.3",
-        "htp": "^0.6.2",
-        "jinang": "^0.14.0",
+        "htp": "^0.7.0",
+        "jinang": "^0.16.0",
         "noda": "^0.3.0"
     },
     "devDependencies": {
@@ -11,10 +11,10 @@
     },
     "directories": {},
     "scripts": {
-        "test": "mocha"
+        "test": "mocha --timeout 10000"
     },
     "name": "npm-registry-rest",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "index.js",
     "keywords": [
         "npm-registry"

@@ -14,9 +14,15 @@ const MODULE_REQUIRE = 1
 describe('getPackage', () => {
     const pkgName = 'jinang';
     
-    it('bacis metadata', done => {
+    it('normal', done => {
         getPackage(pkgName).then(meta => {
             done();
         })
+    });
+
+    it('lite', done => {
+        getPackage.lite(pkgName).then(meta => {
+            done();
+        });
     });
 });

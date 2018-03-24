@@ -1,0 +1,6 @@
+{
+	"name": "npm-registry-rest", 
+	"badges": [
+		"npm.*"
+	]
+}

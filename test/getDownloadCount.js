@@ -11,7 +11,7 @@ const MODULE_REQUIRE = 1
     , getDownloadCount = noda.inRequire('getDownloadCount')
     ;
 
-describe.only('getDownloadCount', () => {
+describe('getDownloadCount', () => {
     const pkgName = 'jinang';
     const pkgNames = [ 'jinang', 'overload2' ];
     

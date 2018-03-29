@@ -33,7 +33,7 @@ function getDownloadCount(options) { return co(function*() {
 	
 	let pathname = `point/${range}/${pkgnames}`;
 	let urlname = modifyUrl.pathname(config('endPoint.downloads'), pathname, 'a');
-	
+
 	let response = yield htp.get(urlname);
 	if (response.statusCode != 200) {
 		throw new Error(`HTTP ${response.statusCode}, ${response.statusMessage}`);

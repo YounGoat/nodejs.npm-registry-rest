@@ -16,8 +16,16 @@ describe('getPackage', () => {
     
     it('normal', done => {
         getPackage(pkgName).then(meta => {
+            assert.equal(typeof meta, 'object');
             done();
         })
+    });
+
+    it('not found', done => {
+        getPackage('un-existing-pack-age').catch(err => {
+            assert.equal(err.message, 'Not Found');
+            done();
+        });
     });
 
     it('lite', done => {

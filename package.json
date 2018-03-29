@@ -14,7 +14,7 @@
         "test": "mocha --timeout 10000"
     },
     "name": "npm-registry-rest",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "main": "index.js",
     "keywords": [
         "npm-registry"

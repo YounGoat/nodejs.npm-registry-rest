@@ -50,6 +50,7 @@ getPackage('htp')
 *   [Promise(Object) __getPackage__(string *name*)](#getpackage)
 *   [Promise(Object) __getPackage.lite__(string *name*)](#getpackages)
 *   [Promise(Array) __getPackageNames__(Object *options*)](#getpackagenames)
+*   [Promise(number) __getStarCount__(string *packageName*)](#getstarcount)
 
 All methods are asynchronous and will return instances of `Promise`. Hereafter, *response* means what to be obtained in `.then((response) => { /* ... */ })`.
 
@@ -107,6 +108,9 @@ What returned will look like:
         url /* string(url) */
     },
     readmeFilename /* string */,
+    "users": { /* Object OPTIONAL, users who stared the package */
+        /* string <username> : boolean true, ... */
+    }
     /* <misc>, ... */
 }
 ```
@@ -157,8 +161,6 @@ What returned will look like:
 }
 ```
 
-
-
 ### getPackage.lite
 
 To get abbreviated meta info of given package.
@@ -171,6 +173,10 @@ To get package names by owner, author, etc.
 *   __options.owner__ *string* OPTINOAL
 
 What returned will be an array of package names.
+
+### getStarCount
+
+To get number of stars of a specified package.
 
 ##  References
 

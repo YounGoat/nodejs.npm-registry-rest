@@ -1,8 +1,3 @@
-/**
- * SEE
- *   https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md
- */
-
 'use strict';
 
 const MODULE_REQUIRE = 1
@@ -18,13 +13,9 @@ const MODULE_REQUIRE = 1
 	, config = noda.inRequire('lib/config')
 	;
 	
-function getPackage(name, abbreviated = false) { return co(function*() {
+function getStarCount(name) { return co(function*() {
 	let urlname = modifyUrl.pathname(config('endPoint.meta'), name, 'a');
-	let headers = {};
-	if (abbreviated) {
-		headers['Accept'] = config('meta.mime');
-	}
-	let response = yield htp.get(urlname, headers);
+	let response = yield htp.get(urlname);
 	
 	if (response.statusCode != 200) {
 		throw new Error(response.statusMessage);
@@ -38,11 +29,12 @@ function getPackage(name, abbreviated = false) { return co(function*() {
 		meta = response.body;
 	}
 
-	return meta;
+	let count = 0;
+	if (meta.users) {
+		count = Object.keys(meta.users).length;
+	}
+
+	return count;
 }) };
 
-getPackage.lite = (name) => {
-	return getPackage(name, true);
-};
-
-module.exports = getPackage;
+module.exports = getStarCount;

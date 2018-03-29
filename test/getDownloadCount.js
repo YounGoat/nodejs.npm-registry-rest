@@ -17,12 +17,14 @@ describe('getDownloadCount', () => {
     
     it('last-day', done => {
         getDownloadCount({ name: pkgName, range: 'last-day' }).then(count => {
+            assert.equal(typeof count, 'number');
             done();
         }).catch(err => { throw err; });
     });
 
     it('bulk query', done => {
         getDownloadCount({ names: pkgNames, range: 'last-day' }).then(count => {
+            assert.equal(typeof count, 'object');
             done();
         }).catch(err => { throw err; });
     });

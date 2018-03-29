@@ -41,7 +41,7 @@ function getDownloadCount(options) { return co(function*() {
 	
 	let body = response.body;
 	if (mul) {
-		return cloneObject(body, (name, value) => [ name, value.downloads ]);
+		return cloneObject(body, (name, value) => [ name, value ? value.downloads : 0 ]);
 	}
 	else {
 		return body.downloads;

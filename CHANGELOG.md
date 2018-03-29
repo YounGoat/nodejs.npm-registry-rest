@@ -2,6 +2,10 @@
 
 Notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning 2.0.0](http://semver.org/).
 
+##  [0.1.1] - Mar 30th, 2018
+
+*   Enhance __npm-registry-rest/getDownoadCount__ to deal with unexisting package name.
+
 ##  [0.1.0] - Mar 29th, 2018
 
 *   __npm-registry-rest/getStarCount__ added.

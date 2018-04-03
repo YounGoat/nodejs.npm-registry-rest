@@ -12,10 +12,17 @@ const MODULE_REQUIRE = 1
     ;
 
 describe('getStarCount', () => {
-    const pkgName = 'jinang';
+    const pkgName = 'jinang', scopedPkgName = '@exs/addon';
     
     it('basic', done => {
         getStarCount(pkgName).then(count => {
+            assert.equal(typeof count, 'number');
+            done();
+        })
+    });
+
+    it('scoped package', done => {
+        getStarCount(scopedPkgName).then(count => {
             assert.equal(typeof count, 'number');
             done();
         })

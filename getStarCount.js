@@ -14,7 +14,10 @@ const MODULE_REQUIRE = 1
 	;
 	
 function getStarCount(name) { return co(function*() {
-	let urlname = modifyUrl.pathname(config('endPoint.meta'), name, 'a');
+	let urlname = modifyUrl.pathname(
+		config('endPoint.meta'), 
+		name.replace('/', '%2F'),
+		'a');
 	let response = yield htp.get(urlname);
 	
 	if (response.statusCode != 200) {

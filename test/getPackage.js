@@ -12,14 +12,21 @@ const MODULE_REQUIRE = 1
     ;
 
 describe('getPackage', () => {
-    const pkgName = 'jinang';
+    const pkgName = 'jinang', scopedPkgName = '@exs/addon';
     
     it('normal', done => {
         getPackage(pkgName).then(meta => {
             assert.equal(typeof meta, 'object');
             done();
-        })
+        });
     });
+
+    it('scoped package', done => {
+        getPackage(scopedPkgName).then(meta => {
+            assert.equal(typeof meta, 'object');
+            done();
+        });
+    })
 
     it('not found', done => {
         getPackage('un-existing-pack-age').catch(err => {

@@ -2,6 +2,11 @@
 
 Notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning 2.0.0](http://semver.org/).
 
+##  [0.1.2] - Apr 4th, 2018
+
+*   Fixed the bug in __npm-registry-rest/getPackage__ that exception 'Not Found' thrown on scoped package name.
+*   Fixed the bug in __npm-registry-rest/getStarCount__ that exception 'Not Found' thrown on scoped package name.
+
 ##  [0.1.1] - Mar 30th, 2018
 
 *   Enhance __npm-registry-rest/getDownoadCount__ to deal with unexisting package name.

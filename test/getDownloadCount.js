@@ -28,4 +28,11 @@ describe('getDownloadCount', () => {
             done();
         }).catch(err => { throw err; });
     });
+
+    it('supressNotFoundError', done => {
+        getDownloadCount({ name: '@exs/-', range: 'last-day', suppressNotFoundError: true }).then(count => {
+            assert.equal(count, 0);
+            done();
+        });
+    });
 });

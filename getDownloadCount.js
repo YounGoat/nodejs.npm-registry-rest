@@ -25,17 +25,29 @@ const MODULE_REQUIRE = 1
  * @param  {string}   [options.name]
  * @param  {string[]} [options.names]
  * @param  {string}    options.range
+ * @param  {boolean}  [options.suppressNotFoundError]
  */
 function getDownloadCount(options) { return co(function*() {
 	let { range, name, names } = options;
-	let mul = names && names.length ? true : false;
-	let pkgnames = names ? names.join(',') : name;
+	let mul = !!names;
+	let pkgnames = mul ? names.join(',') : name;
 	
 	let pathname = `point/${range}/${pkgnames}`;
 	let urlname = modifyUrl.pathname(config('endPoint.downloads'), pathname, 'a');
 
 	let response = yield htp.get(urlname);
-	if (response.statusCode != 200) {
+	if (response.statusCode == 404 && options.suppressNotFoundError) {
+		if (mul) {
+			let counts = {};
+			names.forEach(name => counts[name] = 0);
+			return counts;
+		}
+		else {
+			return 0;
+		}
+	}
+
+	else if (response.statusCode != 200) {
 		throw new Error(`HTTP ${response.statusCode}, ${response.statusMessage}`);
 	}
 	

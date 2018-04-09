@@ -63,10 +63,13 @@ To get download count of specified package(s) in given day.
 *   __options.name__ *string*
 *   __options.name__ *string[]*
 *   __options.range__ *string*
+*   __options.suppressNotFoundError__ *boolean* DEFAULT false
 
 What returned will be:
 *   a number if *options.name* is a string representing a package name.
 *   an object in form of `{ "<packageName>" : <downloadCount>, ... }` if *options.name* is an array of string.
+
+If __options.suppressNotFoundError__ set `true`, there will be no error thrown if package(s) not found, and the package(s) will be regarded as obtaining zero download.
 
 ### getPackage
 
